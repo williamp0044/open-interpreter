@@ -310,7 +310,8 @@ class Interpreter:
                         self.default_handle)  # Get the function from the dictionary, or default_handle if not found
     action(arguments)  # Execute the function
 
-  def chat(self, message=None, return_messages=False):
+  def chat(self, message=None, return_messages=False, auto_run=False):
+    self.auto_run = auto_run
 
     # Connect to an LLM (an large language model)
     if not self.local:
